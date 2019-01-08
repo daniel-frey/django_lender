@@ -5,7 +5,6 @@ class Book(models.Model):
     title = models.CharField(max_length=48, default='')
     detail = models.CharField(max_length=4096, default='')
     author = models.CharField(max_length=255, default='')
-    year = models.DateField(auto_now=False, default=1978-11-18)
     date_added = models.DateTimeField(auto_now_add=True)
     last_borrowed = models.DateTimeField(auto_now=True)
 
@@ -15,7 +14,11 @@ class Book(models.Model):
         ('out', 'Checked Out')
     ]
 
+    YEAR = [(str(i), str(i)) for i in range(1850, 2019)]
+
     status = models.CharField(max_length=48, default ='available', choices=STATES)
+    year = models.CharField(choices=YEAR, max_length=4, default=1900)
+
 
     # def __repr__(self):
     #     return ''

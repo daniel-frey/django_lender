@@ -7,9 +7,9 @@ class TestBookModel(TestCase):
     def setUp(self):
         """
         """
-        Book.objects.create(title='Feed the cat', detail='the cat is hungry', status='available')
-        Book.objects.create(title='Feed the dog', detail='the dog is hungry', status='available')
-        Book.objects.create(title='Feed the fish', detail='the fish is hungry', status='out')
+        Book.objects.create(author='Jim', title='Feed the cat', detail='the cat is hungry', status='available')
+        Book.objects.create(author='Bob', title='Feed the dog', detail='the dog is hungry', status='available')
+        Book.objects.create(author='Joe', title='Feed the fish', detail='the fish is hungry', status='out')
 
 
     # def setUpClass(cls):
