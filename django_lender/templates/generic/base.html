@@ -18,7 +18,8 @@
         {%  endif %}
         <li><a href="{% url "logout" %}">Logout</a></li>
         {%  else %}
-        <li><a href="{% url "login" %}">Login</a></li>
+        <li><a href="{% url "login" %}">Sign In to your account</a></li>
+        <li><a href="{% url "django_registration_register" %}">Register for an account</a></li>
         {%  endif %}
       </ul>
     </nav>

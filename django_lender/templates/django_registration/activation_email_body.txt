@@ -1,3 +1,4 @@
-Welcome, {{ user }}
+Welcome, {{ user }},
 
 To activate your account, please click the link below:
+http://{{site}}{% url 'django_registration_activate' activation_key=activation_key %}
