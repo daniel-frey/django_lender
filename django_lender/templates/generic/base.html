@@ -11,12 +11,22 @@
     <nav>
       <ul>
         <li><a href="{% url "home" %}">Home</a></li>
+        {%  if user.is_authenticated %}
         <li><a href="{% url "book_list" %}">Books</a></li>
+        {%  if user.is_superuser %}
+        <li><a href="{% url "admin:index" %}">Admin</a></li>
+        {%  endif %}
+        <li><a href="{% url "logout" %}">Logout</a></li>
+        {%  else %}
+        <li><a href="{% url "login" %}">Login</a></li>
+        {%  endif %}
       </ul>
     </nav>
+  {% if user.is_authenticated %}
+  <h1>Welcome to the site {{ user.username }}</h1>
+  {%  endif %}
   </header>
   <main>
-    <img src="https://media.giphy.com/media/DgLsbUL7SG3kI/giphy.gif" alt="meeseeks">
     {% block content %}
     <h3>No Content</h3>
     {% endblock content%}

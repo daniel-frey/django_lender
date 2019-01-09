@@ -1,0 +1,3 @@
+Welcome, {{ user }}
+
+To activate your account, please click the link below:
