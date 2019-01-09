@@ -3,6 +3,7 @@
 {% block title %}Book Details{% endblock title %}
 {% block content %}
 <div class="book_detail">
+<img src="{{book.cover_image.url}}" height="300"/>
 <h2>{{ book.title }}</h2>
 <h3>{{ book.year}}</h3>
 <h3>{{ book.author }}</h3>

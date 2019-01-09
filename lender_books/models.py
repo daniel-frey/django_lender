@@ -2,6 +2,7 @@ from django.db import models
 
 class Book(models.Model):
     """This is the book class for the application"""
+    cover_image = models.ImageField()
     title = models.CharField(max_length=48, default='')
     detail = models.CharField(max_length=4096, default='')
     author = models.CharField(max_length=255, default='')

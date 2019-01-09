@@ -27,8 +27,9 @@ DEBUG = os.getenv('DEBUG') == 'True'
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split()
 
-# Media storge options
-
+# Media storage options
+MEDIA_URL = '/lender_books/media/'
+MEDIA_ROOT = '/src/lender_books/media/'
 
 # Application definition
 
