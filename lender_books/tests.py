@@ -7,8 +7,8 @@ class TestBookModel(TestCase):
     def setUp(self):
         """
         """
-        Book.objects.create(author='Jim', title='Feed the cat', detail='the cat is hungry', status='available')
-        Book.objects.create(author='Bob', title='Feed the dog', detail='the dog is hungry', status='available')
+        Book.objects.create(cover_image='test1.jpg', author='Jim', title='Feed the cat', detail='the cat is hungry', status='available')
+        Book.objects.create(cover_image='test2.jpg', author='Bob', title='Feed the dog', detail='the dog is hungry', status='available')
         Book.objects.create(author='Joe', title='Feed the fish', detail='the fish is hungry', status='out')
 
 
@@ -56,7 +56,7 @@ class TestBookViews(TestCase):
         """
         self.request = RequestFactory()
 
-        self.book = Book.objects.create(title='Feed the cat', detail='the cat is hungry', status='available')
+        self.book = Book.objects.create(cover_image='test1.jpg', title='Feed the cat', detail='the cat is hungry', status='available')
         Book.objects.create(title='Feed the dog', detail='the dog is hungry', status='available')
         Book.objects.create(title='Feed the fish', detail='the fish is hungry', status='out')
 

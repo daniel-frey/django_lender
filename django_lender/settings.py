@@ -28,8 +28,8 @@ DEBUG = os.getenv('DEBUG') == 'True'
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split()
 
 # Media storage options
-MEDIA_URL = '/lender_books/media/'
-MEDIA_ROOT = '/src/lender_books/media/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR + '/static/media'
 
 # Application definition
 
@@ -132,3 +132,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]
