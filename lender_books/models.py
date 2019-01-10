@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class Book(models.Model):
     """This is the book class for the application"""
-    cover_image = models.ImageField()
+    cover_image = models.ImageField(upload_to='media')
     title = models.CharField(max_length=48, default='')
     detail = models.CharField(max_length=4096, default='')
     author = models.CharField(max_length=255, default='')

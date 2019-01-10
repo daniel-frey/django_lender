@@ -143,7 +143,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #     '/var/www/static/',
 # ]
 
-MEDIA_URL = '/lender_books/media/'
-MEDIA_ROOT = '/src/lender_books/media/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '')
 
 LOGIN_REDIRECT_URL = '/'
