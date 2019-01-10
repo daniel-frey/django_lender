@@ -4,13 +4,12 @@ from django.contrib.auth.models import User
 
 class Book(models.Model):
     """This is the book class for the application"""
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='books')
     title = models.CharField(max_length=48, default='')
     detail = models.CharField(max_length=4096, default='')
     author = models.CharField(max_length=255, default='')
     date_added = models.DateTimeField(auto_now_add=True)
     last_borrowed = models.DateTimeField(auto_now=True)
-
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='books')
 
     STATES = [
         ('available', 'Available'),
@@ -28,5 +27,3 @@ class Book(models.Model):
 
     def __str__(self):
         return f'Book: {self.title} ({self.status})'
-
-    
