@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 class Book(models.Model):
     """This is the book class for the application"""
+    cover_image = models.ImageField()
     title = models.CharField(max_length=48, default='')
     detail = models.CharField(max_length=4096, default='')
     author = models.CharField(max_length=255, default='')
@@ -22,8 +23,8 @@ class Book(models.Model):
     year = models.CharField(choices=YEAR, max_length=4, default=1900)
 
 
-    # def __repr__(self):
-    #     return ''
+    def __repr__(self):
+        return f'<Book: {self.title}>'
 
     def __str__(self):
         return f'Book: {self.title} ({self.status})'

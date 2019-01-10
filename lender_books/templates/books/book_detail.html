@@ -2,13 +2,15 @@
 
 {% block title %}Book Details{% endblock title %}
 {% block content %}
+{% load staticfiles %}
 <div class="book_detail">
-<h2>{{ book.title }}</h2>
-<h3>{{ book.year}}</h3>
-<h3>{{ book.author }}</h3>
-<p>{{ book.detail }}</p>
-<h4>({{ book.status }})</h4>
-<h4>{{ book.date_added }}</h4>
-<h4>{{ book.last_borrowed }}</h4>
+    <h2>Book Title: {{ book.title }}</h2>
+<img src="{{book.cover_image.url}}" height="300">
+    <h3>{{ book.year}}</h3>
+    <h3>Author: {{ book.author }}</h3>
+    <p>Description: {{ book.detail }}</p>
+    <h4>Status: ({{ book.status }})</h4>
+    <h4>Date Added: {{ book.date_added }}</h4>
+    <h4>Last Borrowed: {{ book.last_borrowed }}</h4>
 </div>
 {% endblock content %}
