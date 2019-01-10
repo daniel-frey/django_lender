@@ -1,7 +1,10 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 class Book(models.Model):
     """This is the book class for the application"""
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='books')
     title = models.CharField(max_length=48, default='')
     detail = models.CharField(max_length=4096, default='')
     author = models.CharField(max_length=255, default='')
