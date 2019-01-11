@@ -12,6 +12,7 @@
   <title>{% block title %}{% endblock %} - Books!</title>
 </head>
 <body>
+<div id="container">
   <header>
     <nav>
       <ul>
@@ -32,11 +33,11 @@
   <h1>Welcome to the site {{ user.username }}</h1>
   {%  endif %}
   </header>
-  <main>
-    {% block content %}
-    <h3>No Content</h3>
-    {% endblock content%}
-  </main>
-  <footer></footer>
+    <main>
+      {% block content %}
+      <h3>No Content</h3>
+      {% endblock content%}
+    </main>
+  </div>
 </body>
 </html>
