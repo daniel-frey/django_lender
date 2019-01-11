@@ -7,11 +7,13 @@
     {% load staticfiles %}
     <h2>{{ book.title }}</h2>
 <img src="{{book.cover_image.url}}" height="300">
-    <h3>{{ book.year}}</h3>
-    <h3>Author: {{ book.author }}</h3>
-    <p>Description: {{ book.detail }}</p>
-    <h4>Status: ({{ book.status }})</h4>
-    <h4>Date Added: {{ book.date_added }}</h4>
-    <h4>Last Borrowed: {{ book.last_borrowed }}</h4>
+  <ul>
+    <li>{{ book.year}}</li>
+    <li>Author: {{ book.author }}</li>
+    <li>Description: {{ book.detail }}</li>
+    <li>Status: ({{ book.status }})</li>
+    <li>Date Added: {{ book.date_added }}</li>
+    <li>Last Borrowed: {{ book.last_borrowed }}</li>
+    </ul>
 </div>
 {% endblock content %}
