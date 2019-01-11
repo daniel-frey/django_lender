@@ -9,14 +9,14 @@ class TestBookModel(TestCase):
     def setUp(self):
         """Test the setup function, create books, and a user account.
         """
-        user = User.objects.create_user('scott', 'im@yourhouse.com', 'mypassw0rd')
+        self.user = User.objects.create_user('scott', 'im@yourhouse.com', 'mypassw0rd')
 
         Book.objects.create(cover_image='awesome.jpg', author='Jim', title='Feed the cat', detail='the cat is hungry',
-                            status='available', user=user)
+                            status='available', user=self.user)
         Book.objects.create(cover_image='awesome.jpg', author='Bob', title='Feed the dog', detail='the dog is hungry',
-                            status='available', user=user)
+                            status='available', user=self.user)
         Book.objects.create(cover_image='awesome.jpg', author='Joe', title='Feed the fish', detail='the fish is hungry',
-                            status='out', user=user)
+                            status='out', user=self.user)
 
     def test_book_titles(self):
         """Test that the book title matches the input title
@@ -41,8 +41,7 @@ class TestBookModel(TestCase):
     def test_create_new_book(self):
         """Test to create a new book with only a title
         """
-        user = User.objects.create_user('jb', 'im@yourhouse.com', 'mypassw0rd')
-        new_book = Book.objects.create(cover_image='awesome.jpg', title='new', detail='', author='Bob', user=user)
+        new_book = Book.objects.create(cover_image='awesome.jpg', title='new', detail='', author='Bob', user=self.user)
         self.assertEqual(new_book.title, 'new')
 
 
@@ -53,14 +52,14 @@ class TestBookViews(TestCase):
         self.request = RequestFactory()
         """Test the setup of the books view page including new books and user
         """
-        user = User.objects.create_user('scott', 'im@yourhouse.com', 'mypassw0rd')
+        self.user = User.objects.create_user('scott', 'im@yourhouse.com', 'mypassw0rd')
 
         self.book = Book.objects.create(cover_image='awesome.jpg', author='Jim', title='Feed the cat',
-                                        detail='the cat is hungry', status='available', user=user)
+                                        detail='the cat is hungry', status='available', user=self.user)
         Book.objects.create(cover_image='awesome.jpg', author='Bob', title='Feed the dog', detail='the dog is hungry',
-                            status='available', user=user)
+                            status='available', user=self.user)
         Book.objects.create(cover_image='awesome.jpg', author='Joe', title='Feed the fish', detail='the fish is hungry',
-                            status='out', user=user)
+                            status='out', user=self.user)
 
     def test_list_view_context(self):
         """Test that the list view shows the correct context
