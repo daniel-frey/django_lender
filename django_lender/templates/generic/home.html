@@ -3,6 +3,10 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<h2>Welcome to the home page!</h2>
-<p>{{ message }}</p>
+<p>Welcome to Django Book Library!</p>
+	{% if user.is_authenticated %}
+	<p><a href="{% url 'book_list' %}">Return to your book list</a> to continue managing your books.</p>
+	{% else %}
+	<p><a href="{% url 'django_registration_register' %}">Register</a> or <a href="{% url 'login' %}">login</a> to get started.<p>
+	{% endif %}
 {% endblock content %}

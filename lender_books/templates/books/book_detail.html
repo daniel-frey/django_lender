@@ -4,6 +4,7 @@
 {% block content %}
 {% load staticfiles %}
 <div class="book_detail">
+    {% load staticfiles %}
     <h2>Book Title: {{ book.title }}</h2>
 <img src="{{book.cover_image.url}}" height="300">
     <h3>{{ book.year}}</h3>
